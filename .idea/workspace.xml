@@ -14,21 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="stream-page.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="stream-page.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stream-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1394">
-              <caret line="100" column="10" lean-forward="false" selection-start-line="100" selection-start-column="10" selection-end-line="100" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fb.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/fb.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1151">
-              <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+            <state relative-caret-position="340">
+              <caret line="101" column="50" lean-forward="true" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -39,6 +29,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2045">
               <caret line="529" column="25" lean-forward="false" selection-start-line="529" selection-start-column="25" selection-end-line="529" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chatbox.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/github.io/chatbox.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="13" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="24" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -84,7 +84,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/test1.js" />
         <option value="$PROJECT_DIR$/call-page.html" />
         <option value="$PROJECT_DIR$/group-call-page.css" />
         <option value="$PROJECT_DIR$/fb.js" />
@@ -132,9 +131,10 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/chat-box.js" />
         <option value="$USER_HOME$/Downloads/BTL_Web/stream-page.html" />
-        <option value="$PROJECT_DIR$/stream-page.html" />
         <option value="$PROJECT_DIR$/css/stream-page.css" />
         <option value="$PROJECT_DIR$/js/fb.js" />
+        <option value="$USER_HOME$/Downloads/github.io/chatbox.html" />
+        <option value="$PROJECT_DIR$/stream-page.html" />
       </list>
     </option>
   </component>
@@ -252,12 +252,12 @@
       <workItem from="1511364765830" duration="1205000" />
       <workItem from="1511367554678" duration="140000" />
       <workItem from="1511367980891" duration="2430000" />
-      <workItem from="1511838428194" duration="3949000" />
+      <workItem from="1511838428194" duration="4633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135970000" />
+    <option name="totallyTimeSpent" value="136654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
@@ -312,13 +312,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/modalEffects.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/modernizr.custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -564,14 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/stream-page.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2045">
-          <caret line="529" column="25" lean-forward="false" selection-start-line="529" selection-start-column="25" selection-end-line="529" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/github.io/fb-login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -588,18 +573,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stream-page.html">
+    <entry file="file://$PROJECT_DIR$/js/fb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="100" column="10" lean-forward="false" selection-start-line="100" selection-start-column="10" selection-end-line="100" selection-end-column="10" />
+        <state relative-caret-position="51">
+          <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/fb.js">
+    <entry file="file://$PROJECT_DIR$/css/stream-page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1151">
-          <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        <state relative-caret-position="2045">
+          <caret line="529" column="25" lean-forward="false" selection-start-line="529" selection-start-column="25" selection-end-line="529" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/github.io/chatbox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stream-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="101" column="50" lean-forward="true" selection-start-line="101" selection-start-column="50" selection-end-line="101" selection-end-column="50" />
           <folding />
         </state>
       </provider>

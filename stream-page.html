@@ -101,19 +101,22 @@
         <div class="chat-box">
             <script src="js/chat-box.js"></script>
             <script>
+
                 $(function () {
+                    var namex = sessionStorage.getItem('nameFB');
+                    console.log("get" + namex);
+
                     var socket = io("https://boxchat1.herokuapp.com");
                     $('form').submit(function () {
 
-                        socket.emit('chat message', $('#m').val());
+                        socket.emit('chat message','<b>'+ namex+'</b>'+ " : " + $('#m').val());
                         $('#m').val('');
                         return false;
                     });
                     socket.on('chat message', function (msg) {
-                        $('#messages').append($('<li>').text(msg));
+                        $('#messages').append($('<li>').html(msg));
                     });
                 });
-
             </script>
             <div id="chat-box-section">
                 <ul id="messages"></ul>
