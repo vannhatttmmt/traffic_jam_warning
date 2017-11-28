@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="fsvs">
+<head>
+    <title>Log In</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/css/animate/animate.css">
+    <link rel="stylesheet" href="css/login-page.css">
+    <script src="vendor/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="js/fb.js"></script>
+    <script src="js/home-page.js"></script>
+</head>
+<body>
+<div class="frontpage-slider">
+    <div class="video-wrapper">
+        <video class="slide-video hero-video-lazyload" preload="auto" autoplay="" loop="" muted="">
+            <source data-src="img/videobackground.webm" type="video/webm">
+        </video>
+    </div>
+    <div class="slide-content-wrapper">
+        <div class="slide-content">
+            <div class="slide-content-inner"><span class="client">Streaming, Calling, Broadcast</span>
+                <h2 style="font-size: 50.8333px;">All is possible with us... Let's GO!</h2>
+                <div id="status"></div>
+                <div id="url-button"></div>
+                <div onclick="login()" id="login" class="btn btn-inverse"><span
+                        class="inactive">Log in with Facebook</span><span class="active"
+                                                                          style="background-image: url(img/slide1.svg); cursor: pointer;">Log in with Facebook</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('body').addClass('animated fadeInRight');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Streaming</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/fonts/font-awesome-4.3.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="vendor/css/animate/animate.css">
+    <link rel="stylesheet" href="vendor/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link rel="stylesheet" href="css/stream-page.css">
+    <script src="vendor/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendor/js/bootstraps/bootstrap.min.js"></script>
+    <script src="js/fb.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/thread.js"></script>
+    <script src="js/webrtc.js"></script>
+    <script src="js/rtc-controller.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <nav id="nav-bar" class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand" id="logo">
+                <li><a href="home-page.html"><span>LIVE</span></a></li>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="stream-page.html">Stream now</a></li>
+                <li><a href="call-page.html">Call now</a></li>
+                <li><a href="group-call-page.html">Group call</a></li>
+                <li><a href="screen-broadcast-page.html">Screen broadcast</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="section">
+        <div>
+            <div id="div__pre-vid">
+                <video id="pre-vid" autoplay loop muted>
+                    <source src="img/pew1.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div>
+            <div id="vid-box"></div>
+        </div>
+    </div>
+    <div class="aside">
+        <div class="bodyDiv">
+
+            <div id="stream-info" hidden="true">
+                <button id="end" onclick="end()" hidden="true">Done</button>
+                <img src="img/person_dark.png"/>
+                <span id="here-now">0</span>
+            </div>
+            <form name="streamForm" id="stream" action="#" onsubmit="return errWrap(stream,this);">
+                        <span class="input input--nao">
+        <input class="input__field input__field--nao" type="text" name="streamname" placeholder="Enter Stream Name"
+               id="streamname"/>
+                <label class="input__label input__label--nao" for="streamname">
+                    <span class="input__label-content input__label-content--nao">
+                    </span>
+                        </label>
+                        <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+                             preserveAspectRatio="none">
+                            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                        </svg>
+                        </span>
+                <button id="stream-button" class="cbutton cbutton--effect-radomir" type="submit" value="Stream"
+                        name="stream_submit"
+                        style="margin-top: 40px; margin-left:-10px">
+                    <i class="cbutton__icon fa fa-fw fa fa fa-video-camera"></i>
+                </button>
+            </form>
+            <form name="watchForm" id="watch" action="#" onsubmit="return errWrap(watch,this);">
+                        <span class="input input--nao">
+        <input class="input__field input__field--nao" type="text" name="number" placeholder="Enter Stream To Watch!"/>
+                <label class="input__label input__label--nao">
+                    <span class="input__label-content input__label-content--nao">
+                    </span>
+                        </label>
+                        <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+                             preserveAspectRatio="none">
+                            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                        </svg>
+                        </span>
+                <button id="user-button" class="cbutton cbutton--effect-radomir" type="submit" value="Watch"
+                        style="margin-top: 40px; margin-left:-10px">
+                    <i class="cbutton__icon fa fa-fw fa fa-eye"></i>
+                </button>
+            </form>
+        </div>
+        <div class="chat-box">
+            <script src="js/chat-box.js"></script>
+            <script>
+                $(function () {
+                    var socket = io("https://boxchat1.herokuapp.com");
+                    $('form').submit(function () {
+
+                        socket.emit('chat message', $('#m').val());
+                        $('#m').val('');
+                        return false;
+                    });
+                    socket.on('chat message', function (msg) {
+                        $('#messages').append($('<li>').text(msg));
+                    });
+                });
+
+            </script>
+            <div id="chat-box-section">
+                <ul id="messages"></ul>
+            </div>
+            <div id="chat-box-form-wrapper">
+                <form name="streamForm" action="#" id="chat-box-form">
+                <span class="input input--nao">
+                    <input id="m" class="input__field input__field--nao" autocomplete="off" placeholder="Enter your text here...">
+                    <label class="input__label input__label--nao" for="streamname">
+                    <span class="input__label-content input__label-content--nao">
+                    </span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+                         preserveAspectRatio="none">
+                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+                    <button type="button" id="chat-box-button" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            var objDiv = document.getElementById("chat-box-section");
+            objDiv.scrollTop = objDiv.scrollHeight;
+        </script>
+    </div>
+    <script type="text/javascript" src="js/stream-controller.js"></script>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('body').addClass('animated fadeInRight');
+
+        $('#stream-button').click(function () {
+            $('#pre-vid').hide();
+        });
+        $('#user-button').click(function () {
+            $('#pre-vid').hide();
+        });
+    });
+</script>
+</body>
+
+</html>

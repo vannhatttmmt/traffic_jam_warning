@@ -1,0 +1,120 @@
+.header::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.bodyDiv {
+    margin-top: 80px;
+}
+
+.wrapper {
+    min-width: 720px;
+    min-height: 700px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#nav-bar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #4B0082;
+    border: none;
+    margin-bottom: 5px;
+}
+
+.left-side {
+    float: left;
+    width: 20%;
+    min-height: 600px;
+    float: left;
+}
+
+.section {
+    float: left;
+    width: 60%;
+    min-height: 600px;
+    float: left;
+}
+
+.right-side {
+    float: left;
+    width: 20%;
+    min-height: 600px;
+    float: left;
+}
+
+.footer {
+    width: 100%;
+    min-height: 50px;
+    clear: both;
+    text-align: center;
+}
+
+.friend-video {
+    width: 98%;
+    margin: auto;
+}
+
+.online-friend {
+    width: 95%;
+    height: 500px;
+    margin: auto;
+    border: 1px solid #4B0082;
+    text-align: center;
+    color: #4B0082;
+}
+
+.video-js .vjs-big-play-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+}
+
+.video-detail h3 {
+    margin-top: 10px;
+}
+
+#myNavbar a {
+    color: #ffffff;
+    background-color: #4B0082;
+}
+
+#myNavbar ul {
+    padding: 0;
+}
+
+.navbar-nav > .open > a {
+    background-color: #4B0082 !important;
+}
+
+.navbar-inverse .navbar-toggle {
+    border: none;
+}
+
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:hover {
+    background-color: #4B0082;
+}
+
+#myNavbar ul li {
+    font-size: 17px;
+    padding-top: 5px;
+}
+
+.dropdown a {
+    padding-top: 8px !important;
+}
+
+.dropdown a img {
+    border-radius: 20px;
+}
+
+.dropdown ul {
+    background-color: #4B0082;
+}

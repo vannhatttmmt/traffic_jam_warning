@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group Call</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="vendor/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/css/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/logo.css">
+    <script src="vendor/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendor/js/bootstraps/bootstrap.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/group-call-page.css">
+</head>
+<body>
+<div class="container-fluid">
+    <nav id="nav-bar" class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand" id="logo">
+                <li><a href="home-page.html"><span>LIVE</span></a></li>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="stream-page.html">Stream now</a></li>
+                <li><a href="call-page.html">Call now</a></li>
+                <li><a href="group-call-page.html">Group call</a></li>
+                <li><a href="screen-broadcast-page.html">Screen broadcast</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="bodyDiv">
+
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <!-- My Phone Number & Dial Areas -->
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <div id="vid-box"></div>
+        <div id="vid-thumb"></div>
+
+        <form name="loginForm" id="login" action="#" onsubmit="return errWrap(login,this);">
+        <span class="input input--nao">
+            <input class="input__field input__field--nao" type="text" name="username" id="username"
+                   placeholder="Enter A Username"/>
+                <label class="input__label input__label--nao" for="username">
+                    <span class="input__label-content input__label-content--nao">
+                    </span>
+                </label>
+                <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+                     preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                </svg>
+        </span>
+
+            <button class="cbutton cbutton--effect-radomir" type="submit" name="login_submit" value="Log In"
+                    style="margin-top: 40px; margin-left:-10px">
+                <i class="cbutton__icon fa fa-fw fa fa-sign-in"></i>
+            </button>
+        </form>
+
+        <form name="callForm" action="#" onsubmit="return errWrap(makeCall,this);">
+        <span class="input input--nao">
+            <input class="input__field input__field--nao" type="text" name="number" placeholder="Enter User To Call!"/>
+					<label class="input__label input__label--nao">
+						<span class="input__label-content input__label-content--nao">
+                        </span>
+					</label>
+				<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+                     preserveAspectRatio="none">
+				    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+				</svg>
+        </span>
+            <button class="cbutton cbutton--effect-radomir md-trigger" type="submit" value="Call"
+                    style="margin-top: 40px; margin-left:-10px" data-modal="modal-13">
+                <i class="cbutton__icon fa fa-fw fa fa fa-phone-square"></i>
+            </button>
+        </form>
+
+        <div id="inCall" class="ptext">
+            <button id="end" onclick="end()">End</button>
+            <button id="mute" onclick="mute()">Mute</button>
+            <button id="pause" onclick="pause()">Pause</button>
+        </div>
+
+        <div id="logs" class="ptext"></div>
+
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+        <!-- WebRTC Peer Connections -->
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+        <script src="vendor/js/jquery/jquery-3.2.1.min.js"></script>
+        <script src="js/thread.js"></script>
+        <script src="js/call-page-webrtc.js"></script>
+        <script src="js/group-call-rtc-controller.js"></script>
+        <script src="js/group-call-element.js"></script>
+
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('body').addClass('animated fadeInRight');
+    });
+</script>
+</body>
+</html>

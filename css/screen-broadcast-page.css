@@ -1,0 +1,298 @@
+html{
+    height: 100%;
+    background-color: #EEEEEE;
+}
+.container-fluid {
+    padding: 0;
+    overflow: hidden;
+    min-width: 905px;
+    background-color: #EEEEEE;
+}
+#nav-bar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #512DA8;
+    border: none;
+    margin-bottom: 5px;
+    min-height: 60px;
+}
+
+
+#myNavbar a {
+    color: #ffffff;
+    background-color: #512DA8;
+}
+
+#myNavbar ul {
+    padding: 0;
+}
+
+.navbar-nav > .open > a {
+    background-color: #512DA8 !important;
+}
+
+.navbar-inverse .navbar-toggle {
+    border: none;
+}
+
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:hover {
+    background-color: #512DA8;
+}
+
+#myNavbar ul li {
+    font-size: 17px;
+    padding-top: 5px;
+    background-color: #512DA8;
+}
+
+article{
+    display: block;
+    max-width: 900px;
+    min-width: 360px;
+    width: 80%;
+    background: #fff;
+    border: 1px solid;
+    border-color: #ddd #aaa #aaa #ddd;
+    margin: 0 auto;
+    margin-top: 65px;
+    padding: 2em;
+}
+
+button, input[type=button] {
+    -webkit-transition: none;
+    background: #512DA8;
+    border: 1px solid #512DA8;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-family: inherit;
+    line-height: 1.3;
+    padding: 10px 12px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+tr, td, th {
+    vertical-align: top;
+    padding: .7em 1.4em;
+    border-top: 1px dotted #BBA9A9;
+    border-right: 1px dotted #BBA9A9;
+}
+
+table, tbody, tr, td {
+    width: 100% !important;
+}
+
+.table-style {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin-top: 0px;
+    margin-bottom: 16px;
+    display: block;
+    width: 728px;
+    overflow: auto;
+    word-break: normal;
+    color: rgb(51, 51, 51);
+    font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+    font-size: 16px;
+    line-height: 25.6000003814697px;
+"><thead><tr style=" border-top-width: 1 px;
+    border-top-style: solid;
+    border-top-color: rgb(204, 204, 204);
+}
+
+.tr-style {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(204, 204, 204);
+    background-color: rgb(248, 248, 248);
+}
+
+.td-style {
+    padding: 6px 13px;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+.td-style2 {
+    color: rgb(65, 131, 196);
+    text-decoration: none;
+    background: transparent;
+}
+
+.experiment {
+    border: 1px solid rgb(189, 189, 189);
+    border-bottom: none;
+    margin: 1em 3em;
+    border-radius: .2em;
+    text-align: left;
+    background-color: #EEEEEE;
+}
+
+.experiment .header {
+    padding: .2em .4em;
+}
+
+.experiment .description {
+    padding: .8em 1.4em;
+}
+#videos-container{
+    border-top: 1px solid rgb(189, 189, 189);
+}
+video {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    vertical-align: top;
+    width: 100%;
+}
+
+h2{
+    margin: 0 ;
+}
+a{
+    color: #512DA8;
+}
+a:hover{
+    text-decoration: none;
+}
+
+.input {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin: 1em;
+    width: calc(100% - 2em);
+    vertical-align: top;
+}
+
+.input__field {
+    position: relative;
+    display: block;
+    float: right;
+    padding: 0.8em;
+    width: 60%;
+    border: none;
+    border-radius: 0;
+    background: #f0f0f0;
+    color: #aaa;
+    font-weight: 400;
+    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.ptext {
+    margin-left: 10%;
+    width: 80%;
+    border: none;
+    border-radius: 0;
+    background: #f0f0f0;
+    color: #aaa;
+    font-weight: 400;
+    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+    outline: none;
+}
+
+.input__label {
+    display: inline-block;
+    float: right;
+    padding: 0 1em;
+    width: 40%;
+    color: #696969;
+    font-weight: bold;
+    font-size: 70.25%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.input__label-content {
+    position: relative;
+    display: block;
+    padding: 1.6em 0;
+    width: 100%;
+}
+
+.graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: none;
+}
+
+.icon {
+    color: #ddd;
+    font-size: 150%;
+}
+
+/* Nao */
+.input--nao {
+    overflow: hidden;
+}
+
+.input__field--nao {
+    padding: 0.5em 0em 0.25em;
+    width: 100%;
+    background: transparent;
+    color: #19a2c6;
+    font-size: 1.25em;
+}
+
+.input__label--nao {
+    position: absolute;
+    top: 0.95em;
+    font-size: 0.85em;
+    left: 0;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0em;
+    pointer-events: none;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transition: -webkit-transform 0.2s 0.15s, color 1s;
+    transition: transform 0.2s 0.15s, color 1s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.graphic--nao {
+    stroke: #92989e;
+    pointer-events: none;
+    -webkit-transition: -webkit-transform 0.7s, stroke 0.7s;
+    transition: transform 0.7s, stroke 0.7s;
+    -webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+    transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+}
+
+.input__field--nao:focus + .input__label--nao,
+.input--filled .input__label--nao {
+    color: #333;
+    -webkit-transform: translate3d(0, -1.25em, 0) scale3d(0.75, 0.75, 1);
+    transform: translate3d(0, -1.25em, 0) scale3d(0.75, 0.75, 1);
+}
+
+.input__field--nao:focus ~ .graphic--nao,
+.input--filled .graphic--nao {
+    stroke: #333;
+    -webkit-transform: translate3d(-66.6%, 0, 0);
+    transform: translate3d(-66.6%, 0, 0);
+}
+.section-form-input{
+    width: 75%;
+    float: left;
+}
+.section-form-button{
+    width: 25%;
+    height: 66px;
+    float: left;
+}
+.section-form-button button{
+    margin-top: 8px;
+}
