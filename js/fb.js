@@ -1,7 +1,7 @@
 // initialize and setup facebook js sdk
 window.fbAsyncInit = function () {
     FB.init({
-        appId: '853276941508723',
+        appId: '1280051495474685',
         xfbml: true,
         version: 'v2.8'
     });
