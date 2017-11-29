@@ -14,54 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="stream-page.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="stream-page.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stream-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="578">
               <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="group-call-page.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/group-call-page.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="32" column="49" lean-forward="false" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="screen-broadcast-page.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/screen-broadcast-page.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="42" column="49" lean-forward="false" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home-page.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/home-page.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="65" column="82" lean-forward="true" selection-start-line="65" selection-start-column="82" selection-end-line="65" selection-end-column="82" />
-              <folding>
-                <element signature="n#style#0;n#h2#0;n#a#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#main#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#0;n#a#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#main#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jump-game/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="48" lean-forward="false" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -166,9 +123,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="308" />
@@ -282,12 +236,12 @@
       <workItem from="1511367554678" duration="140000" />
       <workItem from="1511367980891" duration="2430000" />
       <workItem from="1511838428194" duration="8300000" />
-      <workItem from="1511935383607" duration="744000" />
+      <workItem from="1511935383607" duration="1772000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141065000" />
+    <option name="totallyTimeSpent" value="142093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -554,14 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stream-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/group-call-page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -570,10 +516,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jump-game/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/home-page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="65" column="82" lean-forward="true" selection-start-line="65" selection-start-column="82" selection-end-line="65" selection-end-column="82" />
+          <caret line="65" column="82" lean-forward="false" selection-start-line="65" selection-start-column="82" selection-end-line="65" selection-end-column="82" />
           <folding>
             <element signature="n#style#0;n#h2#0;n#a#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#main#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#div#0;n#a#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#main#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -581,10 +535,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jump-game/index.html">
+    <entry file="file://$PROJECT_DIR$/stream-page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="48" lean-forward="false" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        <state relative-caret-position="578">
+          <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
           <folding />
         </state>
       </provider>
