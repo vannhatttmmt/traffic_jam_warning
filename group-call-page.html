@@ -59,7 +59,7 @@
                 </svg>
         </span>
 
-            <button class="cbutton cbutton--effect-radomir" type="submit" name="login_submit" value="Log In"
+            <button id="call-yours" class="cbutton cbutton--effect-radomir" type="submit" name="login_submit" value="Log In"
                     style="margin-top: 40px; margin-left:-10px">
                 <i class="cbutton__icon fa fa-fw fa fa-sign-in"></i>
             </button>
@@ -77,7 +77,7 @@
 				    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 				</svg>
         </span>
-            <button class="cbutton cbutton--effect-radomir md-trigger" type="submit" value="Call"
+            <button id="call-other" class="cbutton cbutton--effect-radomir md-trigger" type="submit" value="Call"
                     style="margin-top: 40px; margin-left:-10px" data-modal="modal-13">
                 <i class="cbutton__icon fa fa-fw fa fa fa-phone-square"></i>
             </button>
@@ -101,10 +101,126 @@
         <script src="js/group-call-element.js"></script>
 
     </div>
+    <div class="aside">
+        <div class="chat-box">
+            <script src="js/chat-box.js"></script>
+            <script>
+
+                $(function () {
+                    var namex = sessionStorage.getItem('nameFB');
+                    console.log("get" + namex);
+
+                    var socket = io("https://boxchat1.herokuapp.com/");
+                    $('form').submit(function () {
+
+                        socket.emit('chat message', '<b>' + namex + '</b>' + " : " + $('#m').val());
+                        $('#m').val('');
+                        return false;
+                    });
+                    socket.on('chat message', function (msg) {
+                        $('#messages').append($('<li>').html(msg));
+                    });
+                });
+            </script>
+            <div id="chat-box-section">
+                <ul id="messages"></ul>
+            </div>
+            <div id="chat-box-form-wrapper">
+                <form name="streamForm" action="#" id="chat-box-form">
+                <span class="input input--nao">
+                    <input id="m" class="input__field input__field--nao" autocomplete="off"
+                           placeholder="Enter your text here...">
+                    <label class="input__label input__label--nao">
+                    <span class="input__label-content input__label-content--nao">
+                    </span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+                         preserveAspectRatio="none">
+                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+                    <button type="button" id="chat-box-button" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="send-files">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Files</button>
+            <script src="https://cdn.webrtc-experiment.com/IceServersHandler.js"></script>
+            <script src="https://cdn.webrtc-experiment.com/FileBufferReader.js"></script>
+            <script src="https://cdn.webrtc-experiment.com/FileBufferReader/demo/PeerConnection.js"></script>
+            <script src="https://cdn.webrtc-experiment.com/FileBufferReader/demo/PeerUI.js"></script>
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <section id="main-container" class="experiment">
+
+
+                                <div style="text-align:center;">
+                                    <br>
+                                    <button id="setup-offer" disabled="">
+                                        <span>Connecting</span> <span>Signaling Socket..</span>
+                                    </button>
+
+                                    <button id="select-file" disabled style="font-size: 2em;">Single</button>
+                                    <button id="select-multiple" disabled style="font-size: 2em;">Multiple
+                                    </button>
+                                    <button id="select-directory" disabled style="font-size: 2em;">Directory
+                                    </button>
+                                </div>
+
+                                <ol class="output-panel"></ol>
+
+
+                            </section>
+
+
+                            <section class="experiment">
+                                <small id="send-message"></small>
+                            </section>
+
+
+                            <script src="https://cdn.webrtc-experiment.com/common.js"></script>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="show-button-chat" type="button">Send Text</button>
+    <button class="show-button-files" type="button">Send Files</button>
 </div>
+<script>
+    $('.chat-box').hide();
+    $('.send-files').hide();
+    $('.show-button-chat').hide();
+    $('.show-button-files').hide();
+</script>
 <script>
     $(document).ready(function () {
         $('body').addClass('animated fadeInRight');
+        $('#call-other').click(function () {
+            $('.bodyDiv').width("70%");
+            $('.aside').width("30%");
+            $('.show-button-chat').show();
+            $('.show-button-files').show();
+        });
+
+        $('.show-button-chat').click(function () {
+            $('.chat-box').toggle();
+        });
     });
 </script>
 </body>

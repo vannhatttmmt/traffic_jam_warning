@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <head>
     <title>Screen Broadcast</title>
-    <script>
-        if (!location.hash.replace('#', '').length) {
-            location.href = location.href.split('#')[0] + '#' + (Math.random() * 100).toString().replace('.', '');
-            location.reload();
-        }
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vendor/css/bootstrap/bootstrap.min.css">
@@ -39,10 +33,10 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="stream-page.html">Stream Now</a></li>
-                <li><a href="jump-game/index.html">Play Game</a></li>
-                <li><a href="group-call-page.html">Group Call</a></li>
-                <li><a href="screen-broadcast-page.html">Screen Broadcast</a></li>
+                <li><a href="stream-page.html">Stream now</a></li>
+                <li><a href="call-page.html">Call now</a></li>
+                <li><a href="group-call-page.html">Group call</a></li>
+                <li><a href="screen-broadcast-page.html">Screen broadcast</a></li>
             </ul>
         </div>
     </nav>
@@ -53,7 +47,7 @@
                 <span>
                         Private ?? <a href="/screen-sharing/" target="_blank"
                                       title="Open this link for private screen sharing!"><code><strong
-                            id="unique-token">#123456789</strong></code></a>
+                        id="unique-token">#123456789</strong></code></a>
                 </span>
 
                 <div class="section-form-input">

@@ -8,16 +8,14 @@ html{
 }
 .bodyDiv {
     margin-top: 65px;
+    float: left;
+    display: inline-block;
+    width: 100%;
 }
-
-.wrapper {
-    min-width: 720px;
-    min-height: 700px;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    top: 0;
-    left: 0;
+.aside{
+    margin-top: 65px;
+    float: left;
+    display: inline-block;
 }
 
 #nav-bar {
@@ -535,4 +533,69 @@ perspective effects (not including the modals and the overlay).
         transform: scale3d(1.2, 1.2, 1);
     }
 }
-
+.chat-box{
+    position: relative;
+    width: 400px;
+    min-height: 400px;
+    margin: auto;
+    border: 1px solid #2c8383;
+    border-radius: 5px;
+    background-color: #2c8383;
+}
+#chat-box-section{
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    right: 5px;
+    bottom: 86px;
+    overflow-y: scroll;
+    border-radius: 5px;
+    background-color: white;
+}
+#chat-box-form-wrapper{
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    right: 5px;
+}
+#messages{
+    max-height: 200px;
+    margin-bottom: 0;
+}
+#chat-box-form{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*border-radius: 5px;*/
+    background-color: white;
+}
+#chat-box-form span{
+    width: 75% !important;
+    max-width: none;
+    padding: 0;
+}
+#chat-box-button{
+    position: absolute;
+    bottom: 15px;
+}
+.show-button-chat{
+    position: fixed;
+    left: 0;
+    top: 65px;
+    color: #FFFFFF;
+    background-color: #2c8383;
+    border: 1px solid #2c8383;
+    border-radius: 2px;
+    padding: 100px 0px;
+}
+.show-button-files{
+    position: fixed;
+    left: 0;
+    top: 400px;
+    color: #FFFFFF;
+    background-color: #2c8383;
+    border: 1px solid #2c8383;
+    border-radius: 2px;
+    padding: 100px 0px;
+}
