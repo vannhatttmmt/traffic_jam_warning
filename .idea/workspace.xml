@@ -17,8 +17,8 @@
       <file leaf-file-name="group-call-page.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/group-call-page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="593" column="8" lean-forward="false" selection-start-line="593" selection-start-column="8" selection-end-line="593" selection-end-column="8" />
+            <state relative-caret-position="515">
+              <caret line="600" column="24" lean-forward="true" selection-start-line="600" selection-start-column="24" selection-end-line="600" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -27,11 +27,12 @@
       <file leaf-file-name="group-call-page.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/group-call-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="215" column="37" lean-forward="true" selection-start-line="215" selection-start-column="37" selection-end-line="215" selection-end-column="37" />
+            <state relative-caret-position="85">
+              <caret line="158" column="71" lean-forward="true" selection-start-line="158" selection-start-column="71" selection-end-line="158" selection-end-column="71" />
               <folding>
-                <element signature="e#7914#7921#1" expanded="true" />
-                <element signature="n#style#0;n#button#1;n#div#0;n#section#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#7943#7950#1" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#div#0;n#section#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -254,12 +255,12 @@
       <workItem from="1511838428194" duration="8300000" />
       <workItem from="1511935383607" duration="744000" />
       <workItem from="1512011967640" duration="7044000" />
-      <workItem from="1512052929607" duration="1704000" />
+      <workItem from="1512052929607" duration="6279000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149813000" />
+    <option name="totallyTimeSpent" value="154388000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -529,19 +530,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/group-call-page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="593" column="8" lean-forward="false" selection-start-line="593" selection-start-column="8" selection-end-line="593" selection-end-column="8" />
+        <state relative-caret-position="515">
+          <caret line="600" column="24" lean-forward="true" selection-start-line="600" selection-start-column="24" selection-end-line="600" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/group-call-page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="215" column="37" lean-forward="true" selection-start-line="215" selection-start-column="37" selection-end-line="215" selection-end-column="37" />
+        <state relative-caret-position="85">
+          <caret line="158" column="71" lean-forward="true" selection-start-line="158" selection-start-column="71" selection-end-line="158" selection-end-column="71" />
           <folding>
-            <element signature="e#7914#7921#1" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#0;n#section#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#7943#7950#1" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#0;n#section#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

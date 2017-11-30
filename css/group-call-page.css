@@ -12,11 +12,6 @@ html{
     display: inline-block;
     width: 100%;
 }
-.aside{
-    margin-top: 65px;
-    float: left;
-    display: inline-block;
-}
 
 #nav-bar {
     margin-bottom: 0;
@@ -534,7 +529,9 @@ perspective effects (not including the modals and the overlay).
     }
 }
 .chat-box{
-    position: relative;
+    position: fixed;
+    top: 65px;
+    right: 0;
     width: 400px;
     min-height: 400px;
     margin: auto;
@@ -579,23 +576,27 @@ perspective effects (not including the modals and the overlay).
     position: absolute;
     bottom: 15px;
 }
-.show-button-chat{
+#show-button-chat{
     position: fixed;
     left: 0;
     top: 65px;
     color: #FFFFFF;
     background-color: #2c8383;
     border: 1px solid #2c8383;
-    border-radius: 2px;
     padding: 100px 0px;
 }
-.show-button-files{
+#show-button-chat:hover{
+    padding: 100px 12px;
+}
+#show-button-files{
     position: fixed;
-    left: 0;
+    left: 0px;
     top: 400px;
     color: #FFFFFF;
     background-color: #2c8383;
     border: 1px solid #2c8383;
-    border-radius: 2px;
     padding: 100px 0px;
+}
+#show-button-files:hover{
+    padding: 100px 12px;
 }

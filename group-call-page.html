@@ -101,7 +101,6 @@
         <script src="js/group-call-element.js"></script>
 
     </div>
-    <div class="aside">
         <div class="chat-box">
             <script src="js/chat-box.js"></script>
             <script>
@@ -144,7 +143,7 @@
             </div>
         </div>
         <div class="send-files">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Files</button>
+            <button data-toggle="modal" data-target="#myModal" id="show-button-files" title="Send files"><i class="fa fa-angle-double-right"></i></button>
             <script src="https://cdn.webrtc-experiment.com/IceServersHandler.js"></script>
             <script src="https://cdn.webrtc-experiment.com/FileBufferReader.js"></script>
             <script src="https://cdn.webrtc-experiment.com/FileBufferReader/demo/PeerConnection.js"></script>
@@ -157,12 +156,10 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Modal Header</h4>
+                            <h4 class="modal-title">Files Transfer</h4>
                         </div>
                         <div class="modal-body">
-
                             <section id="main-container" class="experiment">
-
 
                                 <div style="text-align:center;">
                                     <br>
@@ -176,17 +173,12 @@
                                     <button id="select-directory" disabled style="font-size: 2em;">Directory
                                     </button>
                                 </div>
-
                                 <ol class="output-panel"></ol>
 
-
                             </section>
-
-
                             <section class="experiment">
                                 <small id="send-message"></small>
                             </section>
-
 
                             <script src="https://cdn.webrtc-experiment.com/common.js"></script>
                         </div>
@@ -198,29 +190,25 @@
                 </div>
             </div>
         </div>
-    </div>
-    <button class="show-button-chat" type="button">Send Text</button>
-    <button class="show-button-files" type="button">Send Files</button>
+    <button id="show-button-chat" type="button" title="Send messages"><i class="fa fa-angle-double-right"></i></button>
 </div>
 <script>
     $('.chat-box').hide();
-    $('.send-files').hide();
-    $('.show-button-chat').hide();
-    $('.show-button-files').hide();
+    $('#show-button-chat').hide();
+    $('#show-button-files').hide();
 </script>
 <script>
     $(document).ready(function () {
         $('body').addClass('animated fadeInRight');
         $('#call-other').click(function () {
-            $('.bodyDiv').width("70%");
-            $('.aside').width("30%");
-            $('.show-button-chat').show();
-            $('.show-button-files').show();
+            $('#show-button-chat').show();
+            $('#show-button-files').show();
         });
 
-        $('.show-button-chat').click(function () {
+        $('#show-button-chat').click(function () {
             $('.chat-box').toggle();
         });
+
     });
 </script>
 </body>
