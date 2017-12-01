@@ -1,19 +1,22 @@
 // initialize and setup facebook js sdk
 window.fbAsyncInit = function () {
     FB.init({
-        appId: '1312200818884269',
+        appId: '1280051495474685',
         xfbml: true,
         version: 'v2.8'
     });
 
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
-            document.getElementById('status').innerHTML = 'You have connected with Facebook';
-            document.getElementById('login').style.visibility = "hidden";
 
             FB.api('/me', function (response) {
-                sessionStorage.setItem('nameFB', response.name);
+                localStorage.setItem('nameFB', response.name);
+                document.getElementById('status').innerHTML = "Welcome " + '<span style="color:#FF6D00">' + response.name +'</span>' + " to Cửu Long Giáng Thế Team!";
             });
+
+
+            document.getElementById('login').style.visibility = "hidden";
+
 
             // Create a url-button element
             var anchor = document.createElement("a");
@@ -50,9 +53,10 @@ function login() {
     FB.login(function (response) {
         if (response.status === 'connected') {
             FB.api('/me', function (response) {
-                sessionStorage.setItem('nameFB', response.name);
+                localStorage.setItem('nameFB', response.name);
+                document.getElementById('status').innerHTML = "Welcome " + '<span style="color:#FF6D00">' + response.name +'</span>' + " to Cửu Long Giáng Thế Team!";
             });
-            document.getElementById('status').innerHTML = 'You have connected with Facebook';
+
             document.getElementById('login').style.visibility = "hidden";
 
             // Create a url-button element

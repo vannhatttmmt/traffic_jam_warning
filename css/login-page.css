@@ -1,3 +1,9 @@
+input::-webkit-input-placeholder {
+    font-family: "Comic Sans MS" !important;
+}
+body{
+    font-family: "Comic Sans MS" !important;
+}
 .animsition,
 .animsition-overlay {
     position: relative;
@@ -9223,4 +9229,7 @@ html.msie .case-item:hover .case-image-veil {
 
 .logout-button:focus{
     outline: none;
+}
+.client h1{
+    display: inline;
 }

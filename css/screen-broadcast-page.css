@@ -2,6 +2,12 @@ html{
     height: 100%;
     background-color: #EEEEEE;
 }
+input::-webkit-input-placeholder {
+    font-family: "Comic Sans MS" !important;
+}
+body{
+    font-family: "Comic Sans MS" !important;
+}
 .container-fluid {
     padding: 0;
     overflow: hidden;
@@ -287,6 +293,7 @@ a:hover{
 .section-form-input{
     width: 75%;
     float: left;
+    padding-top: 20px !important;
 }
 .section-form-button{
     width: 25%;

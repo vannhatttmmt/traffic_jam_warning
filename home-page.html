@@ -5,9 +5,15 @@
     <title>Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/icon.png">
     <link rel="stylesheet" href="css/home-page.css">
     <script src="vendor/js/jquery/jquery-3.2.1.min.js"></script>
     <script src="js/home-page.js"></script>
+    <script>
+        if (localStorage.getItem('nameFB') === null){
+            window.location.href = "error-page.html";
+        }
+    </script>
 </head>
 
 <body class="home blog active-slide-1">

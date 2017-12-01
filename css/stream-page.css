@@ -2,6 +2,12 @@ html{
     height: 100%;
     background-color: #EEEEEE;
 }
+input::-webkit-input-placeholder {
+    font-family: "Comic Sans MS" !important;
+}
+body{
+    font-family: "Comic Sans MS" !important;
+}
 .container-fluid {
     padding: 0;
     overflow: hidden;
@@ -495,19 +501,29 @@ perspective effects (not including the modals and the overlay).
     width: 400px;
     min-height: 400px;
     margin: auto;
-    background-color: #FFFFFF;
     border: 1px solid #01579B;
-    border-radius: 5px;
     background-color: #01579B;
 }
+.chat-box-header{
+    padding-left: 15px;
+    color: #FFFFFF;
+    font-size: 25px;
+}
+.chat-box-header p{
+    padding-left: 6px;
+    display: inline-block;
+}
+.chat-box-header img{
+    max-width: 35px;
+}
+
 #chat-box-section{
     position: absolute;
-    top: 10px;
+    top: 40px;
     left: 5px;
     right: 5px;
     bottom: 86px;
     overflow-y: scroll;
-    border-radius: 5px;
     background-color: white;
 }
 #chat-box-form-wrapper{
@@ -525,7 +541,6 @@ perspective effects (not including the modals and the overlay).
     bottom: 0;
     left: 0;
     right: 0;
-    /*border-radius: 5px;*/
     background-color: white;
 }
 #chat-box-form span{

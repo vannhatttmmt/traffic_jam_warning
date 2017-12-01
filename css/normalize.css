@@ -16,7 +16,6 @@ audio:not([controls]) {
 }
 
 html {
-    font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
@@ -19549,11 +19548,6 @@ h1, h2, h3, .primary-text {
     font-weight: 400
 }
 
-h4, h5, h6, .secondary-text {
-    font-family: BrownPro, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-weight: 400
-}
-
 span[translate] {
     font-weight: inherit;
     color: inherit;
@@ -28074,7 +28068,6 @@ span[translate].inline {
 
 .get-started.success .green-btn p {
     display: inline-block;
-    font-family: Lato;
     color: white;
     font-size: 27px;
     margin-bottom: 15px;
@@ -28086,7 +28079,6 @@ span[translate].inline {
 }
 
 .get-started.success h1 {
-    font-family: Lato;
     font-size: 41px
 }
 
@@ -28242,7 +28234,6 @@ span[translate].inline {
     }
 
     .get-started .interest-btn {
-        font-family: Lato;
         width: 299px;
         left: 5px
     }
@@ -28257,7 +28248,6 @@ span[translate].inline {
         margin-left: -40%;
         top: 250px;
         font-size: 28px;
-        font-family: Lato-Bold;
         width: 83%
     }
 
@@ -28295,7 +28285,6 @@ span[translate].inline {
     }
 
     .benefits div h4 {
-        font-family: Lato-Bold;
         font-size: 28px;
         width: 100%;
         text-align: left;
@@ -28320,7 +28309,6 @@ span[translate].inline {
         left: 15px;
         text-align: left;
         vertical-align: top;
-        font-family: Lato;
         bottom: 19px
     }
 
@@ -28366,12 +28354,10 @@ span[translate].inline {
     .benefits.white div p.author {
         margin-top: 15px;
         font-size: 26px;
-        font-family: Lato-Bold
     }
 
     .how-it-works h2 {
         font-size: 33px;
-        font-family: Lato-Bold
     }
 
     .how-it-works .tutorial-vid {
@@ -28405,7 +28391,6 @@ span[translate].inline {
     .featured-in p {
         font-size: 28px;
         padding-top: 3px;
-        font-family: Lato-Bold
     }
 
     .get-started {
@@ -28415,14 +28400,12 @@ span[translate].inline {
     .get-started h2 {
         padding-top: 32px;
         font-size: 30px;
-        font-family: Lato-Bold;
         margin-bottom: 10px
     }
 
     .get-started h4 {
         width: 80%;
         font-size: 22px;
-        font-family: Lato;
         line-height: 24px
     }
 

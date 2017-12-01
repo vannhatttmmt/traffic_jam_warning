@@ -2,9 +2,17 @@ html{
     height: 100%;
     background-color: #EEEEEE;
 }
+input::-webkit-input-placeholder {
+    font-family: "Comic Sans MS" !important;
+}
+body{
+    font-family: "Comic Sans MS" !important;
+}
 .container-fluid{
     padding: 0;
     background-color: #EEEEEE;
+    overflow: hidden;
+    min-width: 1366px;
 }
 .bodyDiv {
     margin-top: 65px;
@@ -88,6 +96,9 @@ html{
 .dropdown ul {
     background-color: #2c8383;
 }
+#username{
+    background-color: #EEEEEE !important;
+}
 #inCall, #logs{
     background-color: transparent;
     padding-top: 20px;
@@ -99,6 +110,7 @@ html{
     border: 1px solid #2c8383;
     border-radius: 2px;
     padding: 5px 15px;
+    font-family: "Comic Sans MS";
 }
 .input {
     position: relative;
@@ -531,22 +543,33 @@ perspective effects (not including the modals and the overlay).
 .chat-box{
     position: fixed;
     top: 65px;
-    right: 0;
+    right: 5px;
     width: 400px;
-    min-height: 400px;
+    min-height: 555px;
     margin: auto;
     border: 1px solid #2c8383;
-    border-radius: 5px;
     background-color: #2c8383;
+    z-index: 1000;
+}
+.chat-box-header{
+    padding-left: 15px;
+    color: #FFFFFF;
+    font-size: 25px;
+}
+.chat-box-header p{
+    padding-left: 6px;
+    display: inline-block;
+}
+.chat-box-header img{
+    max-width: 35px;
 }
 #chat-box-section{
     position: absolute;
-    top: 10px;
+    top: 40px;
     left: 5px;
     right: 5px;
     bottom: 86px;
     overflow-y: scroll;
-    border-radius: 5px;
     background-color: white;
 }
 #chat-box-form-wrapper{
@@ -564,7 +587,6 @@ perspective effects (not including the modals and the overlay).
     bottom: 0;
     left: 0;
     right: 0;
-    /*border-radius: 5px;*/
     background-color: white;
 }
 #chat-box-form span{
@@ -575,6 +597,9 @@ perspective effects (not including the modals and the overlay).
 #chat-box-button{
     position: absolute;
     bottom: 15px;
+    background-color: #2c8383;
+    border-color: #2c8383;
+    padding: 10px 12px;
 }
 #show-button-chat{
     position: fixed;
@@ -599,4 +624,32 @@ perspective effects (not including the modals and the overlay).
 }
 #show-button-files:hover{
     padding: 100px 12px;
+}
+.modal-header{
+    background-color: #2c8383;
+}
+.modal-title{
+    color: #FFFFFF;
+}
+button[data-dismiss="modal"]{
+    color: #FFFFFF;
+    background-color: #2c8383;
+}
+button[data-dismiss="modal"]:hover{
+    color: #FFFFFF;;
+}
+.modal-top{
+    padding-top: 10px;
+}
+.modal-top button{
+    background-color: #2c8383;
+    border-color: #2c8383;
+}
+.modal-bottom{
+    padding-top: 10px;
+}
+.modal-bottom button{
+    background-color: #2c8383;
+    border-color: #2c8383;
+    color: #EEEEEE;
 }

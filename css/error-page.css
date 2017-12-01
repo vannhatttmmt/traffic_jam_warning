@@ -1,0 +1,12 @@
+body{
+    font-family: "Comic Sans MS" !important;
+    background-color: #EEEEEE;
+}
+.wrapper{
+    margin: 60px auto;
+    width: 60%;
+    text-align: center;
+}
+button{
+    font-family: "Comic Sans MS";
+}

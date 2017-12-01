@@ -4,6 +4,7 @@
     <title>Live Streaming</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/icon.png">
     <link rel="stylesheet" href="vendor/fonts/font-awesome-4.3.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/normalize.css"/>
     <link rel="stylesheet" href="vendor/css/animate/animate.css">
@@ -17,6 +18,11 @@
     <script src="js/thread.js"></script>
     <script src="js/webrtc.js"></script>
     <script src="js/rtc-controller.js"></script>
+    <script>
+        if (localStorage.getItem('nameFB') === null){
+            window.location.href = "error-page.html";
+        }
+    </script>
 	
 	<script src="https://serveruserstream.herokuapp.com/socket.io/socket.io.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -56,7 +62,7 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="navbar-brand" id="logo">
-                <li><a href="home-page.html"><span>LIVE</span></a></li>
+                <li><a href="home-page.html"><span>CLGT</span></a></li>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
@@ -78,6 +84,12 @@
         </div>
         <div>
             <div id="vid-box"></div>
+        </div>
+        <div>
+            <h3 style="margin-left:20px;">Stream Now</h3>
+            <ul id="userOnline" style="margin-left:20px; overflow: auto;">
+
+            </ul>
         </div>
     </div>
     <div class="aside">
@@ -133,10 +145,10 @@
                     var namex = sessionStorage.getItem('nameFB');
                     console.log("get" + namex);
 
-                    var socket = io("https://serveruserstream.herokuapp.com/");
+                    var socket = io("https://boxchat1.herokuapp.com/");
                     $('form').submit(function () {
 
-                        socket.emit('chat message','<b>'+ namex+'</b>'+ " : " + $('#m').val());
+                        socket.emit('chat message', '<b>' + namex + '</b>' + " : " + $('#m').val());
                         $('#m').val('');
                         return false;
                     });
@@ -145,14 +157,16 @@
                     });
                 });
             </script>
+            <div class="chat-box-header"><img src="img/chat-box-img.png"><p>Chat Room</p></div>
             <div id="chat-box-section">
                 <ul id="messages"></ul>
             </div>
             <div id="chat-box-form-wrapper">
                 <form name="streamForm" action="#" id="chat-box-form">
                 <span class="input input--nao">
-                    <input id="m" class="input__field input__field--nao" autocomplete="off" placeholder="Enter your text here...">
-                    <label class="input__label input__label--nao" for="streamname">
+                    <input id="m" class="input__field input__field--nao" autocomplete="off"
+                           placeholder="Enter your text here...">
+                    <label class="input__label input__label--nao">
                     <span class="input__label-content input__label-content--nao">
                     </span>
                     </label>
@@ -161,58 +175,6 @@
                          <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Files</button>
-                    <script src="https://cdn.webrtc-experiment.com/IceServersHandler.js"></script>
-                    <script src="https://cdn.webrtc-experiment.com/FileBufferReader.js"></script>
-                    <script src="https://cdn.webrtc-experiment.com/FileBufferReader/demo/PeerConnection.js"> </script>
-                    <script src="https://cdn.webrtc-experiment.com/FileBufferReader/demo/PeerUI.js"></script>
-                    <!-- Modal -->
-                    <div id="myModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Modal Header</h4>
-                                </div>
-                                <div class="modal-body">
-
-                                    <section id="main-container" class="experiment">
-
-
-                                        <div style="text-align:center;">
-                                            <br>
-                                            <button id="setup-offer" disabled="">
-                                                <span>Connecting</span> <span>Signaling Socket..</span>
-                                            </button>
-
-                                            <button id="select-file" disabled style="font-size: 2em;">Single</button>
-                                            <button id="select-multiple" disabled style="font-size: 2em;">Multiple</button>
-                                            <button id="select-directory" disabled style="font-size: 2em;">Directory</button>
-                                        </div>
-
-                                        <ol class="output-panel"></ol>
-
-
-                                    </section>
-
-
-                                    <section class="experiment">
-                                        <small id="send-message"></small>
-                                    </section>
-
-
-
-                                    <script src="https://cdn.webrtc-experiment.com/common.js"></script>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
                     <button type="button" id="chat-box-button" class="btn btn-primary">Send</button>
                 </form>
             </div>
@@ -238,13 +200,6 @@
     });
 </script>
 
-
-    <div>
-        <h3 style="margin-left:20px;">Stream Now</h3>
-        <ul id="userOnline" style="margin-left:20px; overflow: auto;">
-
-        </ul>
-    </div>
 </body>
 
 </html>

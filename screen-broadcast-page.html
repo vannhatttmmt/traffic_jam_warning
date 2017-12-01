@@ -3,6 +3,7 @@
     <title>Screen Broadcast</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.png">
     <link rel="stylesheet" href="vendor/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="vendor/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="vendor/css/animate/animate.css">
@@ -16,6 +17,11 @@
     <script src="js/get-screen-id.js"></script>
     <script src="js/bandwidth-handler.js"></script>
     <script src="js/screen.js"></script>
+    <script>
+        if (localStorage.getItem('nameFB') === null){
+            window.location.href = "error-page.html";
+        }
+    </script>
 </head>
 
 <body>
@@ -28,13 +34,13 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="navbar-brand" id="logo">
-                <li><a href="home-page.html"><span>LIVE</span></a></li>
+                <li><a href="home-page.html"><span>CLGT</span></a></li>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="stream-page.html">Stream now</a></li>
-                <li><a href="call-page.html">Call now</a></li>
+                <li><a href="jump-game/index.html">Play Game</a></li>
                 <li><a href="group-call-page.html">Group call</a></li>
                 <li><a href="screen-broadcast-page.html">Screen broadcast</a></li>
             </ul>
