@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Group Call</title>
     <meta charset="UTF-8">
@@ -11,14 +12,35 @@
     <link rel="stylesheet" type="text/css" href="css/logo.css">
     <script src="vendor/js/jquery/jquery-3.2.1.min.js"></script>
     <script src="vendor/js/bootstraps/bootstrap.min.js"></script>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '1312200818884269',
+                xfbml: true,
+                version: 'v2.1'
+            });
+
+            FB.getLoginStatus(function (response) {
+                if (response.status === 'connected') {
+                    console.log("connected");
+                } else {
+                    window.location.href = "error-page.html";
+                }
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    </script>
     <script src="js/modernizr.custom.js"></script>
     <link rel="stylesheet" href="css/normalize.css"/>
     <link rel="stylesheet" href="css/group-call-page.css">
-    <script>
-    if (localStorage.getItem('nameFB') === null){
-    window.location.href = "error-page.html";
-    }
-    </script>
 </head>
 <body>
 <div class="container-fluid">
@@ -36,7 +58,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="stream-page.html">Stream Now</a></li>
-                <li><a href="jump-game/index.html">Play Game</a></li>
+                <li><a href="game-page.html">Play Game</a></li>
                 <li><a href="group-call-page.html">Group Call</a></li>
                 <li><a href="screen-broadcast-page.html">Screen Broadcast</a></li>
             </ul>
@@ -112,7 +134,7 @@
         <script src="js/chat-box.js"></script>
         <script>
             $(function () {
-                var namex = sessionStorage.getItem('nameFB');
+                var namex = localStorage.getItem('nameFB');
                 console.log("get" + namex);
 
                 var socket = io("https://boxchat1.herokuapp.com/");
@@ -153,10 +175,10 @@
     <div class="send-files">
         <button data-toggle="modal" data-target="#myModal" id="show-button-files" title="Send files"><i
                 class="fa fa-angle-double-right"></i></button>
-        <script src="https://cdn.webrtc-experiment.com/IceServersHandler.js"></script>
-        <script src="https://cdn.webrtc-experiment.com/FileBufferReader.js"></script>
-        <script src="https://cdn.webrtc-experiment.com/FileBufferReader/demo/PeerConnection.js"></script>
-        <script src="https://cdn.webrtc-experiment.com/FileBufferReader/demo/PeerUI.js"></script>
+        <script src="js/ice-server.js"></script>
+        <script src="js/file-buffer-reader.js"></script>
+        <script src="js/peer-connection.js"></script>
+        <script src="js/peer-ui.js"></script>
         <!-- Modal -->
         <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog">

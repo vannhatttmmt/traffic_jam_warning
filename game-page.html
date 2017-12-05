@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Play Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="vendor/fonts/font-awesome-4.3.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="vendor/css/animate/animate.css">
+    <link rel="stylesheet" href="vendor/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link rel="stylesheet" href="css/stream-page.css">
+    <script src="vendor/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendor/js/bootstraps/bootstrap.min.js"></script>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '1312200818884269',
+                xfbml: true,
+                version: 'v2.1'
+            });
+
+            FB.getLoginStatus(function (response) {
+                if (response.status === 'connected') {
+                    console.log("connected");
+                } else {
+                    window.location.href = "error-page.html";
+                }
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+    <script src="js/firebare.js"></script>
+    <link href="./static/css/main.c8c1bec7.css" rel="stylesheet">
+</head>
+
+<body style="margin:0">
+    <nav id="nav-bar" class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand" id="logo">
+                <li><a href="home-page.html"><span>CLGT</span></a></li>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="stream-page.html">Stream Now</a></li>
+                <li><a href="game-page.html">Play Game</a></li>
+                <li><a href="group-call-page.html">Group Call</a></li>
+                <li><a href="screen-broadcast-page.html">Screen Broadcast</a></li>
+            </ul>
+        </div>
+    </nav>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="text/javascript" src="./static/js/main.0e61940c.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('body').addClass('animated fadeInRight');
+        });
+    </script>
+</body>
+
+</html>

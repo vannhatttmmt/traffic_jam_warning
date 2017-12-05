@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Live Streaming</title>
     <meta charset="UTF-8">
@@ -14,26 +15,52 @@
     <script src="vendor/js/jquery/jquery-3.2.1.min.js"></script>
     <script src="vendor/js/bootstraps/bootstrap.min.js"></script>
     <script src="js/fb.js"></script>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '1312200818884269',
+                xfbml: true,
+                version: 'v2.1'
+            });
+
+            FB.getLoginStatus(function (response) {
+                if (response.status === 'connected') {
+                    console.log("connected");
+                } else {
+                    window.location.href = "error-page.html";
+                }
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    </script>
     <script src="js/modernizr.custom.js"></script>
     <script src="js/thread.js"></script>
     <script src="js/webrtc.js"></script>
     <script src="js/rtc-controller.js"></script>
-    <script>
-        if (localStorage.getItem('nameFB') === null){
-            window.location.href = "error-page.html";
-        }
-    </script>
-	
-	<script src="https://serveruserstream.herokuapp.com/socket.io/socket.io.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
 
+    <script src="js/socket.js"></script>
+    <script>
+        var nameChatStream;
+        var chatHistory = [];
         $(function () {
             var socket = io("https://serveruserstream.herokuapp.com/");
-            $('form').submit(function () {
+            $('#stream').submit(function () {
                 socket.emit('new user online', $('#streamname').val());
+                nameChatStream = $('#streamname').val();
                 return false;
             });
+
             socket.on('list user', function (users) {
                 users.forEach(function (element) {
                     $('#userOnline').append(`<li id="${element}">${element}</li>`);
@@ -42,12 +69,26 @@
 
             socket.on('user disconnected', function (user_dis) {
                 $(`#${user_dis}`).remove();
-                console.log("dis: " + { user_dis });
+                console.log("dis: " + {user_dis});
             });
             socket.on('new user online', function (user) {
                 $('#userOnline').append(`<li id="${user}">${user}</li>`);
             });
 
+            $('#watch').submit(function () {
+                var history, hist = [];
+                var namereq = $('#streamwatch').val();
+                history = localStorage.getItem(namereq) + ",";
+                var his = history.split('*/,');
+                his.forEach(function (hi) {
+                    $('#messages').append($('<li>').html(hi));
+                });
+
+                nameChatStream = $('#streamwatch').val();
+                hist = localStorage.getItem(namereq);
+                chatHistory.push(hist);
+                return false;
+            });
         });
     </script>
 </head>
@@ -62,24 +103,36 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="navbar-brand" id="logo">
-                <li><a href="home-page.html"><span>CLGT</span></a></li>
+                <li>
+                    <a href="home-page.html">
+                        <span>CLGT</span>
+                    </a>
+                </li>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="stream-page.html">Stream Now</a></li>
-                <li><a href="jump-game/index.html">Play Game</a></li>
-                <li><a href="group-call-page.html">Group Call</a></li>
-                <li><a href="screen-broadcast-page.html">Screen Broadcast</a></li>
+                <li>
+                    <a href="stream-page.html">Stream Now</a>
+                </li>
+                <li>
+                    <a href="game-page.html">Play Game</a>
+                </li>
+                <li>
+                    <a href="group-call-page.html">Group Call</a>
+                </li>
+                <li>
+                    <a href="screen-broadcast-page.html">Screen Broadcast</a>
+                </li>
             </ul>
         </div>
     </nav>
     <div class="section">
         <div>
             <div id="div__pre-vid">
-                <video id="pre-vid" autoplay loop muted>
-                    <source src="img/pew1.mp4" type="video/mp4">
-                </video>
+                <iframe class="embed-responsive-item" width="900" height="500"
+                        src="https://www.youtube.com/embed/LhqH8kb3Qvc?rel=0&controls=0&fs=0&loop=1&showinfo=0&autoplay=1"
+                        frameborder="0" loop></iframe>
             </div>
         </div>
         <div>
@@ -101,36 +154,40 @@
                 <span id="here-now">0</span>
             </div>
             <form name="streamForm" id="stream" action="#" onsubmit="return errWrap(stream,this);">
-                        <span class="input input--nao">
-        <input class="input__field input__field--nao" type="text" name="streamname" placeholder="Enter Stream Name"
-               id="streamname"/>
-                <label class="input__label input__label--nao" for="streamname">
-                    <span class="input__label-content input__label-content--nao">
-                    </span>
+                    <span class="input input--nao">
+                        <input class="input__field input__field--nao" type="text" name="streamname"
+                               placeholder="Enter Stream Name" id="streamname"
+                        />
+                        <label class="input__label input__label--nao" for="streamname">
+                            <span class="input__label-content input__label-content--nao">
+                            </span>
                         </label>
                         <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
                              preserveAspectRatio="none">
-                            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                            />
                         </svg>
-                        </span>
+                    </span>
                 <button id="stream-button" class="cbutton cbutton--effect-radomir" type="submit" value="Stream"
-                        name="stream_submit"
-                        style="margin-top: 40px; margin-left:-10px">
+                        name="stream_submit" style="margin-top: 40px; margin-left:-10px">
                     <i class="cbutton__icon fa fa-fw fa fa fa-video-camera"></i>
                 </button>
             </form>
             <form name="watchForm" id="watch" action="#" onsubmit="return errWrap(watch,this);">
-                        <span class="input input--nao">
-        <input class="input__field input__field--nao" type="text" name="number" placeholder="Enter Stream To Watch!"/>
-                <label class="input__label input__label--nao">
-                    <span class="input__label-content input__label-content--nao">
-                    </span>
+                    <span class="input input--nao">
+                        <input class="input__field input__field--nao" type="text" name="number"
+                               placeholder="Enter Stream To Watch!" id="streamwatch"
+                        />
+                        <label class="input__label input__label--nao">
+                            <span class="input__label-content input__label-content--nao">
+                            </span>
                         </label>
                         <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
                              preserveAspectRatio="none">
-                            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                            />
                         </svg>
-                        </span>
+                    </span>
                 <button id="user-button" class="cbutton cbutton--effect-radomir" type="submit" value="Watch"
                         style="margin-top: 40px; margin-left:-10px">
                     <i class="cbutton__icon fa fa-fw fa fa-eye"></i>
@@ -142,14 +199,15 @@
             <script>
 
                 $(function () {
-                    var namex = sessionStorage.getItem('nameFB');
-                    console.log("get" + namex);
+                    var namex = localStorage.getItem('nameFB');
 
-                    var socket = io("https://boxchat1.herokuapp.com/");
-                    $('form').submit(function () {
+                    var socket = io("https://serveruserstream.herokuapp.com/");
 
+                    $('#chat-box-form').submit(function () {
                         socket.emit('chat message', '<b>' + namex + '</b>' + " : " + $('#m').val());
-                        $('#m').val('');
+                        var temp = '<b>' + namex + '</b>' + " : " + $('#m').val() + '*/';
+                        chatHistory.push(temp);
+                        localStorage.setItem(nameChatStream, chatHistory);
                         return false;
                     });
                     socket.on('chat message', function (msg) {
@@ -157,24 +215,28 @@
                     });
                 });
             </script>
-            <div class="chat-box-header"><img src="img/chat-box-img.png"><p>Chat Room</p></div>
+            <div class="chat-box-header">
+                <img src="img/chat-box-img.png">
+                <p>Chat Room</p>
+            </div>
             <div id="chat-box-section">
                 <ul id="messages"></ul>
             </div>
             <div id="chat-box-form-wrapper">
                 <form name="streamForm" action="#" id="chat-box-form">
-                <span class="input input--nao">
-                    <input id="m" class="input__field input__field--nao" autocomplete="off"
-                           placeholder="Enter your text here...">
-                    <label class="input__label input__label--nao">
-                    <span class="input__label-content input__label-content--nao">
-                    </span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
-                         preserveAspectRatio="none">
-                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
+                        <span class="input input--nao">
+                            <input id="m" class="input__field input__field--nao" autocomplete="off"
+                                   placeholder="Enter your text here...">
+                            <label class="input__label input__label--nao">
+                                <span class="input__label-content input__label-content--nao">
+                                </span>
+                            </label>
+                            <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+                                 preserveAspectRatio="none">
+                                <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                                />
+                            </svg>
+                        </span>
                     <button type="button" id="chat-box-button" class="btn btn-primary">Send</button>
                 </form>
             </div>
@@ -192,10 +254,10 @@
         $('body').addClass('animated fadeInRight');
 
         $('#stream-button').click(function () {
-            $('#pre-vid').hide();
+            $('#div__pre-vid').remove();
         });
         $('#user-button').click(function () {
-            $('#pre-vid').hide();
+            $('#div__pre-vid').remove();
         });
     });
 </script>
