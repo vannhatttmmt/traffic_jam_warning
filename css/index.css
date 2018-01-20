@@ -1,0 +1,147 @@
+body {
+    font-family: "Comic Sans MS" !important;
+    overflow-x: hidden !important;
+}
+
+.clearfix {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#main {
+    transition: margin-left .5s;
+    position: relative;
+    top: 55px;
+    left: 50px;
+    right: 5px;
+}
+
+#header nav {
+    background-color: hsl(0, 100%, 50%);
+    border: none;
+}
+
+a {
+    color: #f1f1f1;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#myNavbar li {
+    padding: 0 8px;
+}
+
+.input-group {
+    width: 600px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 50px;
+    position: fixed;
+    z-index: 1;
+    top: 55px;
+    left: 0;
+    background-color: hsl(0, 100%, 50%);
+    overflow: hidden;
+    transition: 0s;
+    padding-top: 60px;
+}
+.sidenav img{
+    max-width: 40px;
+    padding-left: 10px;
+    padding-bottom: 50px;
+}
+.abc{
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #f1f1f1;
+    display: none;
+    transition: 0s;
+}
+.abc:hover {
+    color: #333;
+    background-color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav a:first-child:hover {
+    background-color: hsl(0, 100%, 50%);
+}
+
+#sidenav-open {
+    font-size: 30px;
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+.carousel-slide-left {
+    width: 66.67%;
+    float: left;
+}
+
+.carousel-slide-right {
+    width: 33.33%;
+    float: left;
+}
+
+#myCarousel {
+    width: 99%;
+    margin: auto;
+}
+
+#myCarousel-1 {
+    width: 97%;
+    margin: auto;
+}
+
+#myCarousel-2 {
+    width: 97%;
+    margin: auto;
+    padding-top: 5px;
+}
+#myCarousel-3{
+    width: 99%;
+    margin: 5px auto;
+}
+.product {
+    width: 100%;
+    text-align: center;
+}
+
+.menu-item li {
+    float: left;
+    width: 25%;
+    padding: 10px 0;
+    transition: 0.5s ease;
+}
+
+.menu-item li:hover {
+    box-shadow: 1px 1px 1px 1px #d1d1d1;
+    opacity: 0.6;
+}
+
+.menu-item img {
+    max-width: 180px;
+}
+
+.menu-item a {
+    color: #333;
+}
+
+.menu-item a:hover {
+    text-decoration: none;
+}

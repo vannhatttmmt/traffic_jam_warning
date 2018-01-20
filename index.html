@@ -1,41 +1,233 @@
 <!DOCTYPE html>
-<html class="fsvs">
+<html lang="en">
 <head>
-    <title>Log In</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="img/icon.png">
-    <link rel="stylesheet" href="vendor/css/animate/animate.css">
-    <link rel="stylesheet" href="css/login-page.css">
-    <script src="vendor/js/jquery/jquery-3.2.1.min.js"></script>
-    <script src="js/fb.js"></script>
-    <script src="js/home-page.js"></script>
-
+    <title>Sub Exchange</title>
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="vendor/jquery/jquery-3.2.1.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="frontpage-slider">
-    <div class="video-wrapper">
-        <video class="slide-video hero-video-lazyload" preload="auto" autoplay="" loop="" muted="">
-            <source data-src="img/videobackground.webm" type="video/webm">
-        </video>
-    </div>
-    <div class="slide-content-wrapper">
-        <div class="slide-content">
-            <div class="slide-content-inner"><span class="client"><h1>C</h1>alling, <h1>L</h1>iveStream, <h1>G</h1>aming, <h1>T</h1>ogether</span>
-                <h2 style="font-size: 50.8333px;">All is possible with us... Let's GO!</h2>
-                <div id="status"></div>
-                <div id="url-button"></div>
-                <div onclick="login()" id="login" class="btn btn-inverse"><span
-                        class="inactive">Log in with Facebook</span><span class="active"
-                                                                          style="background-image: url(img/slide1.svg); cursor: pointer;">Log in with Facebook</span>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn abc" onclick="closeNav()">&times;</a>
+    <a href="#"><img src="img/sub-request.png" alt=""></a><a href="#" class="abc">Youtube Subscribe Request</a>
+    <a href="#"><img src="img/sub-another.png" alt=""></a><a href="#" class="abc">Subscribe Another</a>
+    <a href="#"><img src="img/purchase.png" alt=""></a><a href="#" class="abc">Purchase</a>
+    <a href="#"><img src="img/contact.png" alt=""></a><a href="#" class="abc">Contact</a>
+    <a href="#"><img src="img/about.png" alt=""></a><a href="#" class="abc">About Us and Feedback</a>
+</div>
+<header id="header">
+    <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span id="sidenav-open" onclick="openNav()">&#9776; Menu</span>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="main">
+    <section class="carousel-slide-left">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/26731106_515629468823881_7975787346499701375_n.jpg?oh=12fe6aaca16a1418c957f173b09e3ee4&oe=5AF79A05">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/26731106_515629468823881_7975787346499701375_n.jpg?oh=12fe6aaca16a1418c957f173b09e3ee4&oe=5AF79A05">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/26731106_515629468823881_7975787346499701375_n.jpg?oh=12fe6aaca16a1418c957f173b09e3ee4&oe=5AF79A05">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+                </div>
+            </div>
+
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+    <section class="carousel-slide-right">
+        <div id="myCarousel-1" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/26731106_515629468823881_7975787346499701375_n.jpg?oh=12fe6aaca16a1418c957f173b09e3ee4&oe=5AF79A05">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/26731106_515629468823881_7975787346499701375_n.jpg?oh=12fe6aaca16a1418c957f173b09e3ee4&oe=5AF79A05">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/26731106_515629468823881_7975787346499701375_n.jpg?oh=12fe6aaca16a1418c957f173b09e3ee4&oe=5AF79A05">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div id="myCarousel-2" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+                <div class="item active">
+                    <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/26731106_515629468823881_7975787346499701375_n.jpg?oh=12fe6aaca16a1418c957f173b09e3ee4&oe=5AF79A05">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/26731106_515629468823881_7975787346499701375_n.jpg?oh=12fe6aaca16a1418c957f173b09e3ee4&oe=5AF79A05">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/26731106_515629468823881_7975787346499701375_n.jpg?oh=12fe6aaca16a1418c957f173b09e3ee4&oe=5AF79A05">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="carousel-slide-bottom clearfix">
+        <div id="myCarousel-3" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/26731106_515629468823881_7975787346499701375_n.jpg?oh=12fe6aaca16a1418c957f173b09e3ee4&oe=5AF79A05">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/26731106_515629468823881_7975787346499701375_n.jpg?oh=12fe6aaca16a1418c957f173b09e3ee4&oe=5AF79A05">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/26731106_515629468823881_7975787346499701375_n.jpg?oh=12fe6aaca16a1418c957f173b09e3ee4&oe=5AF79A05">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+                </div>
+            </div>
+
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+
 </div>
 <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        document.getElementById("main").style.opacity = "0.5";
+        $('.abc').css("display", "block");
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "50px";
+        document.getElementById("main").style.marginLeft = "50px";
+        document.body.style.backgroundColor = "white";
+        document.getElementById("main").style.opacity = "1";
+        $('.abc').css("display", "none");
+    }
+</script>
+<script>
     $(document).ready(function () {
-        $('body').addClass('animated fadeInRight');
+        $("body").addClass("animated fadeInRight")
     });
 </script>
 </body>
