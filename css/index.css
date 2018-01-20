@@ -14,7 +14,7 @@ body {
     position: relative;
     top: 55px;
     left: 50px;
-    right: 5px;
+    margin-right: 50px;
 }
 
 #header nav {
@@ -37,7 +37,7 @@ ul {
 }
 
 .input-group {
-    width: 600px;
+    width: 500px;
 }
 
 .sidenav {
@@ -52,22 +52,36 @@ ul {
     transition: 0s;
     padding-top: 60px;
 }
-.sidenav img{
+
+.sidenav p {
+    display: inline;
+    padding-left: 10px;
+    vertical-align: bottom;
+    font-size: 20px;
+}
+
+.sidenav-show-icon img {
     max-width: 40px;
     padding-left: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 55px;
 }
-.abc{
-    padding: 8px 8px 8px 8px;
+
+.sidenav-hide-icon img {
+    max-width: 40px;
+}
+
+.sidenav-hide-icon {
+    padding: 8px 8px 50px 8px;
     text-decoration: none;
     font-size: 18px;
     color: #f1f1f1;
     display: none;
     transition: 0s;
 }
-.abc:hover {
-    color: #333;
-    background-color: #f1f1f1;
+
+.sidenav-hide-icon:hover {
+    color: white;
+    text-decoration: none;
 }
 
 .sidenav .closebtn {
@@ -77,9 +91,14 @@ ul {
     font-size: 36px;
     margin-left: 50px;
 }
-
+.sidenav a:first-child{
+    padding: 0;
+}
 .sidenav a:first-child:hover {
     background-color: hsl(0, 100%, 50%);
+    color: white;
+    text-decoration: none;
+    padding: 0;
 }
 
 #sidenav-open {
@@ -115,7 +134,8 @@ ul {
 }
 #myCarousel-3{
     width: 99%;
-    margin: 5px auto;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 .product {
     width: 100%;

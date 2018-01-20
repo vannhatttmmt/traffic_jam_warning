@@ -10,12 +10,28 @@
 </head>
 <body>
 <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn abc" onclick="closeNav()">&times;</a>
-    <a href="#"><img src="img/sub-request.png" alt=""></a><a href="#" class="abc">Youtube Subscribe Request</a>
-    <a href="#"><img src="img/sub-another.png" alt=""></a><a href="#" class="abc">Subscribe Another</a>
-    <a href="#"><img src="img/purchase.png" alt=""></a><a href="#" class="abc">Purchase</a>
-    <a href="#"><img src="img/contact.png" alt=""></a><a href="#" class="abc">Contact</a>
-    <a href="#"><img src="img/about.png" alt=""></a><a href="#" class="abc">About Us and Feedback</a>
+    <a href="javascript:void(0)" class="closebtn sidenav-hide-icon" onclick="closeNav()">&times;</a>
+
+    <a href="#" class="sidenav-show-icon"><img src="img/sub-request.png" alt=""></a>
+    <a href="#" class="sidenav-hide-icon"><img src="img/sub-request.png" alt="">
+        <p>Subscribe Request</p></a>
+
+    <a href="#" class="sidenav-show-icon"><img src="img/sub-another.png" alt=""></a>
+    <a href="#" class="sidenav-hide-icon"><img src="img/sub-another.png" alt="">
+        <p>Subscribe Another</p></a>
+
+    <a href="#" class="sidenav-show-icon"><img src="img/purchase.png" alt=""></a>
+    <a href="#" class="sidenav-hide-icon"><img src="img/purchase.png" alt="">
+        <p>Purchase</p></a>
+
+    <a href="#" class="sidenav-show-icon"><img src="img/contact.png" alt=""></a>
+    <a href="#" class="sidenav-hide-icon"><img src="img/contact.png" alt="">
+        <p>Contact</p></a>
+
+    <a href="#" class="sidenav-show-icon"><img src="img/about.png" alt=""></a>
+    <a href="#" class="sidenav-hide-icon"><img src="img/about.png" alt="">
+        <p>About Us and Feedback</p></a>
+
 </div>
 <header id="header">
     <nav class="navbar navbar-fixed-top">
@@ -212,9 +228,10 @@
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
         document.getElementById("main").style.marginLeft = "200px";
-        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        document.body.style.backgroundColor = "rgba(0,0,0,0)";
         document.getElementById("main").style.opacity = "0.5";
-        $('.abc').css("display", "block");
+        $('.sidenav-hide-icon').css("display", "block");
+        $('.sidenav-show-icon').css("display", "none");
     }
 
     function closeNav() {
@@ -222,7 +239,8 @@
         document.getElementById("main").style.marginLeft = "0px";
         document.body.style.backgroundColor = "white";
         document.getElementById("main").style.opacity = "1";
-        $('.abc').css("display", "none");
+        $('.sidenav-hide-icon').css("display", "none");
+        $('.sidenav-show-icon').css("display", "block");
     }
 </script>
 <script>
