@@ -25,7 +25,9 @@ body {
 a {
     color: #f1f1f1;
 }
-
+a:focus, input:focus{
+    outline: none !important;
+}
 ul {
     margin: 0;
     padding: 0;
@@ -165,3 +167,20 @@ ul {
 .menu-item a:hover {
     text-decoration: none;
 }
+.modal-header{
+    background-color: hsl(0, 100%, 50%);
+    color: white;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border: none;
+}
+.modal-header button{
+    opacity: 1;
+    color: white;
+}
+.modal-body{
+    text-align: center;
+    border: none;
+    padding: 60px;
+}
+
