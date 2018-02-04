@@ -178,5 +178,17 @@
     });
 </script>
 <script src="js/slide-img.js"></script>
+    <script>
+    $('.next').click(function () {
+        $('div.mySlides').addClass('animated fadeInRight');
+        $('div.mySlides').removeClass('fadeInLeft');
+    });
+</script>
+<script>
+    $('.prev').click(function () {
+        $('div.mySlides').addClass('animated fadeInLeft');
+        $('div.mySlides').removeClass('fadeInRight');
+    });
+</script>
 </body>
 </html>
