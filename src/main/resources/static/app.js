@@ -40,7 +40,7 @@ function sendName() {
         'latitude': $("#latitude").val(),
         'speed': $("#speed").val()
     });
-    stompClient._send("/app/hello", {}, myJson);
+    stompClient.send("/app/hello", {}, myJson);
 }
 
 function showGreeting(message) {
