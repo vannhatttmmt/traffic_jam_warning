@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class TrafficData {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "asid")
     @Id
     private int id;
 
