@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trafficjamwarning.iml" filepath="$PROJECT_DIR$/.idea/modules/trafficjamwarning.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../trafficjamwarning/.idea/modules/trafficjamwarning_main.iml" filepath="$PROJECT_DIR$/../trafficjamwarning/.idea/modules/trafficjamwarning_main.iml" group="trafficjamwarning" />
-      <module fileurl="file://$PROJECT_DIR$/../trafficjamwarning/.idea/modules/trafficjamwarning_test.iml" filepath="$PROJECT_DIR$/../trafficjamwarning/.idea/modules/trafficjamwarning_test.iml" group="trafficjamwarning" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trafficjams_warning.iml" filepath="$PROJECT_DIR$/.idea/modules/trafficjams_warning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trafficjams_warning_main.iml" filepath="$PROJECT_DIR$/.idea/modules/trafficjams_warning_main.iml" group="trafficjams_warning" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trafficjams_warning_test.iml" filepath="$PROJECT_DIR$/.idea/modules/trafficjams_warning_test.iml" group="trafficjams_warning" />
     </modules>
   </component>
 </project>
