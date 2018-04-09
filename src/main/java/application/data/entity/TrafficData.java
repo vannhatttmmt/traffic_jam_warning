@@ -5,13 +5,9 @@ import javax.persistence.*;
 @Entity(name = "tbl_trafficdata")
 public class TrafficData {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "asid")
-    @Id
-    private int id;
-
     @Column(name = "deviceid")
-    private String deviceid;
+    @Id
+    private String deviceId;
 
     @Column(name = "longitude")
     private String longitude;
@@ -23,22 +19,22 @@ public class TrafficData {
     private String speed;
 
     @Column(name = "pathname")
-    private String pathname;
+    private String pathName;
 
-    public int getId() {
-        return id;
+    public String getDeviceId() {
+        return deviceId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
     }
 
-    public String getDeviceid() {
-        return deviceid;
+    public String getPathName() {
+        return pathName;
     }
 
-    public void setDeviceid(String deviceid) {
-        this.deviceid = deviceid;
+    public void setPathName(String pathName) {
+        this.pathName = pathName;
     }
 
     public String getLongitude() {
@@ -65,11 +61,4 @@ public class TrafficData {
         this.speed = speed;
     }
 
-    public String getPathname() {
-        return pathname;
-    }
-
-    public void setPathname(String pathname) {
-        this.pathname = pathname;
-    }
 }

@@ -1,18 +1,18 @@
 package application.model;
 
 public class TrafficDataModel {
-    private String deviceid;
+    private String deviceId;
     private String longitude;
     private String latitude;
     private String speed;
-    private String pathname;
+    private String pathName;
 
-    public String getDeviceid() {
-        return deviceid;
+    public String getDeviceId() {
+        return deviceId;
     }
 
-    public void setDeviceid(String deviceid) {
-        this.deviceid = deviceid;
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
     }
 
     public String getLongitude() {
@@ -39,11 +39,11 @@ public class TrafficDataModel {
         this.speed = speed;
     }
 
-    public String getPathname() {
-        return pathname;
+    public String getPathName() {
+        return pathName;
     }
 
-    public void setPathname(String pathname) {
-        this.pathname = pathname;
+    public void setPathName(String pathName) {
+        this.pathName = pathName;
     }
 }

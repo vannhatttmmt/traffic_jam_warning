@@ -4,6 +4,11 @@ import application.data.entity.TrafficData;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-public interface TrafficRepository extends JpaRepository<TrafficData, Integer> {
-    @Query("select count(t.id) from tbl_trafficdata t") long getTotalTrafficData();
+import java.util.List;
+
+public interface TrafficRepository extends JpaRepository<TrafficData, Integer>{
+//    @Query("select p from TrafficData p where p.deviceId like ?1 order by deviceId")
+//    List<TrafficData> findByDeviceId(String deviceId);
+    List<TrafficData> findByDeviceId(String deviceId);
+
 }
