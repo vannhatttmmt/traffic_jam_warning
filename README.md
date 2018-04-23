@@ -1,3 +1,0 @@
-
-SOS Giao Thong
-# trafficjamwarning
