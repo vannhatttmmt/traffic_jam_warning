@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+import java.util.Random;
 
 @RestController
 @RequestMapping("/api")
@@ -29,17 +29,11 @@ public class Controller {
                 ModelMapper modelMapper = new ModelMapper();
                 TrafficData trafficDataEntity = modelMapper.map(trafficDataModel, TrafficData.class);
                 trafficService.addNewTrafficData(trafficDataEntity);
-                result.setSuccess(true);
-                result.setMessage("Success");
                 result.setData(trafficDataEntity);
 
             } else {
-                result.setSuccess(false);
-                result.setMessage("Fail");
             }
         } catch (Exception e) {
-            result.setSuccess(false);
-            result.setMessage(e.getMessage());
         }
         return result;
     }
@@ -51,20 +45,13 @@ public class Controller {
         try {
             List<TrafficData> listexistTrafficData = trafficService.findByDeviceId(deviceId);
             if (listexistTrafficData == null) {
-                result.setSuccess(false);
-                result.setMessage("Not Found");
+
             } else {
-                result.setSuccess(true);
-                result.setMessage("Found");
                 ModelMapper modelMapper = new ModelMapper();
                 TrafficDetailDataModel trafficDetailDataModel = modelMapper.map(listexistTrafficData, TrafficDetailDataModel.class);
                 result.setData(listexistTrafficData);
-                result.setSuccess(true);
-                result.setMessage("Success");
             }
         } catch (Exception e) {
-            result.setSuccess(false);
-            result.setMessage(e.getMessage());
         }
 
         return result;
@@ -94,23 +81,43 @@ public class Controller {
                 listDemoTrafficData.add(demoTrafficData2);
             }
             trafficService.addNewListTrafficData(listDemoTrafficData);
-            result.setSuccess(true);
-            result.setMessage("Success");
             result.setData(listDemoTrafficData);
 
         } catch (Exception e) {
-            result.setSuccess(false);
-            result.setMessage(e.getMessage());
+
         }
 
         return result;
     }
 
-    @GetMapping("/avg")
+    @GetMapping("/avgspeed")
     public ApiResult avgSpeed(){
         ApiResult result = new ApiResult();
-        result.setSuccess(true);
         result.setData(trafficService.getAvgSpeed());
+        return result;
+    }
+
+    @PostMapping("/result")
+    public ApiResult Result(@RequestBody JsonModel jsonModel){
+        Random random = new Random();
+        ApiResult result = new ApiResult();
+        int length = jsonModel.getRoutes().toArray().length;
+
+        ArrayList<RouteModel> listRouteModel = new ArrayList<>();
+        RouteModel routeModel = new RouteModel();
+
+        ArrayList<LegModel> listLegModel = new ArrayList<>();
+        for(int i=0; i<length; i++){
+            LegModel legModel = new LegModel();
+            legModel.setSumDevice(random.nextInt(100));
+            legModel.setAvgSpeed(30 + 30*random.nextDouble());
+            listLegModel.add(legModel);
+        }
+        routeModel.setLegs(listLegModel);
+        listRouteModel.add(routeModel);
+
+        jsonModel.setRoutes(listRouteModel);
+        result.setData(jsonModel);
         return result;
     }
 }
