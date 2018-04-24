@@ -111,6 +111,7 @@ public class Controller {
             LegModel legModel = new LegModel();
             legModel.setSumDevice(random.nextInt(100));
             legModel.setAvgSpeed(30 + 30*random.nextDouble());
+            legModel.setDistance(jsonModel.getRoutes().get(i).getLegs().get(0).getDistance());
             listLegModel.add(legModel);
         }
         routeModel.setLegs(listLegModel);
