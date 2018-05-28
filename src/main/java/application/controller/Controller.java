@@ -113,7 +113,7 @@ public class Controller {
         ArrayList<LegModel> listLegModel = new ArrayList<>();
         for(int i=0; i<length; i++){
             LegModel legModel = new LegModel();
-            if ((localHour>=6 && localHour<=8) || (localHour>=16 && localHour<=20)){
+            if ((localHour>=9 && localHour<=13) || (localHour>=23 && localHour<=24) || (localHour>=0 && localHour<=1)){
                 legModel.setAvgSpeed(10 + 25*random.nextDouble());
                 legModel.setSumDevice(random.nextInt(500) + 300);
             }
