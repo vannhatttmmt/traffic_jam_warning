@@ -3,6 +3,7 @@ package application.controller;
 import application.data.entity.TrafficData;
 import application.data.service.TrafficService;
 import application.model.*;
+import org.apache.logging.log4j.LogManager;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/api")
@@ -126,6 +128,7 @@ public class Controller {
         listRouteModel.add(routeModel);
 
         jsonModel.setRoutes(listRouteModel);
+        jsonModel.setStatus(String.valueOf(localHour));
         result.setData(jsonModel);
         return result;
     }
