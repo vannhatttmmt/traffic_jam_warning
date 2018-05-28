@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -99,6 +100,8 @@ public class Controller {
 
     @PostMapping("/result")
     public ApiResult Result(@RequestBody JsonModel jsonModel){
+        int localHour = LocalDateTime.now().getHour();
+        System.out.println(localHour);
         Random random = new Random();
         ApiResult result = new ApiResult();
         int length = jsonModel.getRoutes().toArray().length;
@@ -110,7 +113,12 @@ public class Controller {
         for(int i=0; i<length; i++){
             LegModel legModel = new LegModel();
             legModel.setSumDevice(random.nextInt(100));
-            legModel.setAvgSpeed(30 + 30*random.nextDouble());
+            if ((localHour>=6 && localHour<=8) || (localHour>=16 && localHour<=20)){
+                legModel.setAvgSpeed(10 + 25*random.nextDouble());
+            }
+            else {
+                legModel.setAvgSpeed(30 + 30*random.nextDouble());
+            }
             legModel.setDistance(jsonModel.getRoutes().get(i).getLegs().get(0).getDistance());
             listLegModel.add(legModel);
         }
