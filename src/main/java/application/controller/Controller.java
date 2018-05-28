@@ -101,7 +101,6 @@ public class Controller {
     @PostMapping("/result")
     public ApiResult Result(@RequestBody JsonModel jsonModel){
         int localHour = LocalDateTime.now().getHour();
-        System.out.println(localHour);
         Random random = new Random();
         ApiResult result = new ApiResult();
         int length = jsonModel.getRoutes().toArray().length;
@@ -112,12 +111,13 @@ public class Controller {
         ArrayList<LegModel> listLegModel = new ArrayList<>();
         for(int i=0; i<length; i++){
             LegModel legModel = new LegModel();
-            legModel.setSumDevice(random.nextInt(100));
             if ((localHour>=6 && localHour<=8) || (localHour>=16 && localHour<=20)){
                 legModel.setAvgSpeed(10 + 25*random.nextDouble());
+                legModel.setSumDevice(random.nextInt(500) + 300);
             }
             else {
                 legModel.setAvgSpeed(30 + 30*random.nextDouble());
+                legModel.setSumDevice(random.nextInt(300) + 100);
             }
             legModel.setDistance(jsonModel.getRoutes().get(i).getLegs().get(0).getDistance());
             listLegModel.add(legModel);
