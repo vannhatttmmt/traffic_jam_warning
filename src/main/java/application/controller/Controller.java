@@ -26,7 +26,7 @@ public class Controller {
         try {
             if (!"".equals(trafficDataModel.getDeviceId()) && !"".equals(trafficDataModel.getLongitude())
                     && !"".equals(trafficDataModel.getLatitude()) && !"".equals(trafficDataModel.getSpeed())
-                    && !"".equals(trafficDataModel.getPathName())) {
+                    && !"".equals(trafficDataModel.getStepName())) {
                 ModelMapper modelMapper = new ModelMapper();
                 TrafficData trafficDataEntity = modelMapper.map(trafficDataModel, TrafficData.class);
                 trafficService.addNewTrafficData(trafficDataEntity);
@@ -68,7 +68,7 @@ public class Controller {
                 demoTrafficData1.setDeviceId("ID " + i);
                 demoTrafficData1.setLongitude("Longitude " + i);
                 demoTrafficData1.setLatitude("Latitude " + i);
-                demoTrafficData1.setPathName("Le Duc Tho");
+                demoTrafficData1.setStepName("Le Duc Tho");
                 demoTrafficData1.setSpeed(i);
                 listDemoTrafficData.add(demoTrafficData1);
             }
@@ -77,7 +77,7 @@ public class Controller {
                 demoTrafficData2.setDeviceId("ID " + j);
                 demoTrafficData2.setLongitude("Longitude " + j);
                 demoTrafficData2.setLatitude("Latitude " + j);
-                demoTrafficData2.setPathName("Xuan Thuy");
+                demoTrafficData2.setStepName("Xuan Thuy");
                 demoTrafficData2.setSpeed(j);
                 listDemoTrafficData.add(demoTrafficData2);
             }

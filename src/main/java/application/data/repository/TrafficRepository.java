@@ -11,10 +11,10 @@ public interface TrafficRepository extends JpaRepository<TrafficData, Integer> {
     List<TrafficData> findByDeviceId(String deviceId);
 @Query("SELECT " +
         "    new application.model.AvgSpeedModel(count(distinct " +
-        "v.deviceId), v.pathName, avg(v.speed)) " +
+        "v.deviceId), v.stepName, avg(v.speed)) " +
         "FROM " +
         "    tbl_trafficdata v " +
         "GROUP BY " +
-        "    v.pathName")
+        "    v.stepName")
     List<AvgSpeedModel> getAvgSpeed();
 }

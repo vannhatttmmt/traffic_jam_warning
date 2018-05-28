@@ -22,8 +22,8 @@ public class TrafficData {
     @Column(name = "speed")
     private float speed;
 
-    @Column(name = "pathname")
-    private String pathName;
+    @Column(name = "stepname")
+    private String stepName;
 
     public String getDeviceId() {
         return deviceId;
@@ -33,12 +33,12 @@ public class TrafficData {
         this.deviceId = deviceId;
     }
 
-    public String getPathName() {
-        return pathName;
+    public String getStepName() {
+        return stepName;
     }
 
-    public void setPathName(String pathName) {
-        this.pathName = pathName;
+    public void setStepName(String stepName) {
+        this.stepName = stepName;
     }
 
     public String getLongitude() {

@@ -5,7 +5,7 @@ public class TrafficDataModel {
     private double longitude;
     private double latitude;
     private double speed;
-    private String pathName;
+    private String stepName;
 
     public String getDeviceId() {
         return deviceId;
@@ -39,11 +39,11 @@ public class TrafficDataModel {
         this.speed = speed;
     }
 
-    public String getPathName() {
-        return pathName;
+    public String getStepName() {
+        return stepName;
     }
 
-    public void setPathName(String pathName) {
-        this.pathName = pathName;
+    public void setStepName(String stepName) {
+        this.stepName = stepName;
     }
 }
